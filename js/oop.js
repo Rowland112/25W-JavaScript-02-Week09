@@ -22,22 +22,27 @@ let person1 = createNewPerson("Priyansh", "Thakar", 16, "Male", ["swimming", "da
 
 /* STEP 2a: In order to be a bit more concise, JavaScript allows us to use constructor functions - 
 rewrite the above function, without returning anything. Capitalize the name of the function. */
-function Person(firstName, lastName, age, gender, interests) {
-    this.name = {
-        "firstName": firstName,
-        "lastName": lastName
-    }
-    this.age = age;
-    this.gender = gender;
-    this.interests = interests;
+function Hamburger(bun, vegetables, cheese, sauce, patty, pattyCount, extras) {
+    this.bun = bun;
+    this.vegetables = vegetables;
+    this.cheese = cheese;
+    this.sauce = sauce;
+    this.patty = patty;
+    this.pattyCount = pattyCount;
+    this.extras = extras;
+    
+    // Bio function to describe the hamburger
     this.bio = function () {
-        return `The interests of ${this.name.firstName}, of age ${this.age}, of gender ${this.gender} are ${this.interests}.`;
+        return `This hamburger has a ${this.bun} bun, with ${this.pattyCount} ${this.patty} patty, topped with ${this.cheese} cheese, drizzled with ${this.sauce} sauce, and finished off with ${this.extras.join(", ")}.`;
     }
 }
 
+
 /* STEP 2b: Use the console to create a couple of different people, using the 'new' keyword, 
 and again invoking the .greeting() method for each person */
-let person2 = new Person("Priyansh", "Thakar", 16, "Male", ["swimming", "dancing", "cooking"]);
+let hamburger1 = new Hamburger("sesame", ["lettuce", "tomato"], "cheddar", "ketchup", "beef", 1, ["pickles", "onions"]);
+let hamburger2 = new Hamburger("whole wheat", ["onions", "lettuce", "tomato"], "swiss", "mayo", "chicken", 2, ["pickles", "hot peppers"]);
+    
 
 /* STEP 3a: Build the complete constructor for the object Person (comment out the above function first).
  Include name (first and last), age, gender, interests, bio (function), and greeting (function). */
